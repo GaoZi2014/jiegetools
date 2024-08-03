@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    overflow: hidden;
+}
+
+video {
+    height: 100vh;
+    width: 100%;
+}
