@@ -11,6 +11,7 @@
     <img style="width: 60px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg">
   </div>
 </div>
+<br>
 
 <div align="center">
   <img src="/screenshot/image.png">
