@@ -17,4 +17,12 @@
   <img src="/screenshot/image.png">
 </div>
 
+> ## Version 1.1
+[New] Added new timer app.
+<br>
+<br>
+[New] Added onclick to hide copyright div.
+<br/>
+<hr>
 
+[Website Link](https://jiegetools.netlify.app/)
