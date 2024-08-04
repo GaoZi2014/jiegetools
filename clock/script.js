@@ -57,3 +57,7 @@ document.addEventListener('keydown', function(event) {
         copyright.style.display = "none";
     }
 });
+
+copyright.addEventListener('click', function() {
+    copyright.style.display = "none";
+});

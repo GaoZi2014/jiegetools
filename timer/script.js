@@ -21,18 +21,6 @@ function resizeGame() {
     container.style.transform = `scale(${newScale})`;
 }
 
-let spaceClickCount = 0;
-
-document.addEventListener('keydown', function(event) {
-    if (event.code === 'Space') {
-        spaceClickCount++;
-        if (spaceClickCount === 5) {
-            spaceClickCount = 0;
-            window.location.href = 'https://jiegetools.netlify.app/rick/vid_onlymd';
-        }
-    }
-});
-
 let shiftClickCount = 0;
 
 document.addEventListener('keydown', function(event) {
@@ -45,35 +33,6 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-let video = document.getElementById("video");
-let videoWrapper = document.getElementById("video-wrapper");
-let description = document.getElementById("des");
-
-function next() {
-    let btnContainer = document.getElementById("play-pause-button");
-
-    btnContainer.innerHTML = '<button onclick="play()">Play</button><br><button id="pause-btn" onclick="pause()">Pause</button>';
-    description.innerHTML = 'Click "Play" to play the video.';
-    videoWrapper.style.height = "480px";
-    setTimeout(resizeGame, 500);
-}
-
-function play() {
-    let title = document.getElementById("title");
-    title.style.fontSize = "28px";
-    setTimeout(resizeGame, 500);
-    description.innerHTML = 'Never Gonna Give You Up';
-    video.style.transform = "scale(1)";
-    video.style.opacity = "1";
-    video.play();
-}
-
-function pause() {
-    video.style.transform = "scale(0.1)";
-    video.style.opacity = "0";
-    video.pause();
-}
-
 let copyright = document.getElementById("copyright")
 
 document.addEventListener('keydown', function(event) {
@@ -85,3 +44,38 @@ document.addEventListener('keydown', function(event) {
 copyright.addEventListener('click', function() {
     copyright.style.display = "none";
 });
+
+let timerInput = document.getElementById('timer-input');
+let endTextInput = document.getElementById('end-text-input');
+let startTimerBtn = document.getElementById('start-timer-btn');
+let timerDisplay = document.getElementById('timer-display');
+
+// Add styles to timerDisplay
+
+startTimerBtn.addEventListener('click', startTimer);
+
+function startTimer() {
+    let duration = parseInt(timerInput.value);
+    let endText = endTextInput.value;
+
+    if (isNaN(duration) || duration <= 0) {
+        alert('Invalid timer duration');
+        return;
+    }
+
+    // Hide input fields and button
+    timerInput.style.display = "none";
+    endTextInput.style.display = "none";
+    startTimerBtn.style.display = "none";
+
+    timerDisplay.textContent = duration.toString();
+    let intervalId = setInterval(() => {
+        duration--;
+        timerDisplay.textContent = duration.toString();
+
+        if (duration === 0) {
+            clearInterval(intervalId);
+            timerDisplay.textContent = endText;
+        }
+    }, 1000);
+}
