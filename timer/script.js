@@ -45,37 +45,48 @@ copyright.addEventListener('click', function() {
     copyright.style.display = "none";
 });
 
-let timerInput = document.getElementById('timer-input');
-let endTextInput = document.getElementById('end-text-input');
-let startTimerBtn = document.getElementById('start-timer-btn');
-let timerDisplay = document.getElementById('timer-display');
-
-// Add styles to timerDisplay
-
-startTimerBtn.addEventListener('click', startTimer);
+// Get the input elements
+const hoursInput = document.getElementById('hours-input');
+const minutesInput = document.getElementById('minutes-input');
+const secondsInput = document.getElementById('seconds-input');
+const endTextInput = document.getElementById('end-text-input');
+const startTimerBtn = document.getElementById('start-timer-btn');
+const timerDisplay = document.getElementById('timer-display');
+const timeInput = document.getElementById('time-input');
+const label = document.getElementById('label');
 
 function startTimer() {
-    let duration = parseInt(timerInput.value);
-    let endText = endTextInput.value;
+    const hours = parseInt(hoursInput.value);
+    const minutes = parseInt(minutesInput.value);
+    const seconds = parseInt(secondsInput.value);
+    const endText = endTextInput.value;
 
-    if (isNaN(duration) || duration <= 0) {
-        alert('Invalid timer duration');
-        return;
-    }
-
-    // Hide input fields and button
-    timerInput.style.display = "none";
+    timeInput.style.display = "none";
     endTextInput.style.display = "none";
     startTimerBtn.style.display = "none";
+    label.style.display = "none";
 
-    timerDisplay.textContent = duration.toString();
+    if (isNaN(hours) || isNaN(minutes) || isNaN(seconds)) {
+      alert("Please don't leave any of it blank.");
+      location.reload();
+    }
+
+    let totalSeconds = hours * 3600 + minutes * 60 + seconds + 1;
+
     let intervalId = setInterval(() => {
-        duration--;
-        timerDisplay.textContent = duration.toString();
+      totalSeconds -= 1;
 
-        if (duration === 0) {
-            clearInterval(intervalId);
-            timerDisplay.textContent = endText;
-        }
+      const hoursDisplay = Math.floor(totalSeconds / 3600);
+      const minutesDisplay = Math.floor((totalSeconds % 3600) / 60);
+      const secondsDisplay = totalSeconds % 60;
+      timerDisplay.textContent = `${hoursDisplay.toString().padStart(2, '0')}:${minutesDisplay.toString().padStart(2, '0')}:${secondsDisplay.toString().padStart(2, '0')}`;
+
+      if (totalSeconds === 0) {
+        clearInterval(intervalId);
+        timerDisplay.textContent = endText;
+      }
     }, 1000);
-}
+  }
+
+// Add event listener to the start timer button
+startTimerBtn.addEventListener('click', startTimer);

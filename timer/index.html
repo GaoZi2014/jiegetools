@@ -12,9 +12,17 @@
 </head>
 <body>
     <div id="container">
-        <input id="timer-input" type="number" placeholder="Enter timer duration (in seconds)">
-        <input id="end-text-input" type="text" placeholder="Enter timer end message">
-        <button id="start-timer-btn">Start Timer</button>
+        <div id="time-input">
+            <label for="hours-input">Hours:</label>
+            <input name="hours-input" id="hours-input" value="0" type="number" placeholder="Hours" min="0">
+            <label for="minutes-input">Minutes:</label>
+            <input name="minutes-input" id="minutes-input" value="0" type="number" placeholder="Minutes" min="0" max="59">
+            <label for="seconds-input">Seconds:</label>
+            <input name="seconds-input" id="seconds-input" value="1" type="number" placeholder="Seconds" min="0" max="59">
+        </div>
+        <label for="end-text-input" id="label">Timer end message:</label>
+        <input name="end-text-input" id="end-text-input" type="text" placeholder="Timer end message" value="Times Up!">
+        <input type="submit" id="start-timer-btn" value="Start Timer">
         <div id="timer-display"></div>
     </div>
     <div id="copyright">
