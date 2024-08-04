@@ -14,7 +14,7 @@
 <br>
 
 <div align="center">
-  <img src="/screenshot/image.png">
+  <img src="/screenshot/screenshot.png">
 </div>
 
 > ## Version 1.1
