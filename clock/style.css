@@ -21,6 +21,24 @@
     }
 }
 
+@keyframes tips {
+    0% {
+        margin-left: 0;
+    }
+    25% {
+        margin-left: 15px;
+    }
+    50% {
+        margin-left: 0
+    }
+    75% {
+        margin-left: 15px;
+    }
+    100% {
+        margin-left: 0
+    }
+}
+
 body {
     font-family: 'Noto Sans Mono', monospace;
     background-color: #fefae0;
@@ -28,14 +46,62 @@ body {
     font-weight: 800;
 }
 
-#copyright {
+#copyright, #colorChanger {
     background-color: #ffffff67;
     width: 100%;
-    height: 30px;
-    text-indent: 20px;
+    min-height: 30px;
     margin: 0px;
     margin-bottom: 0;
     transition: all 0.5s;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+}
+
+#colorChanger {
+    min-height: 40px;
+    display: none;
+}
+
+.hide{
+    opacity: 0;
+}
+
+#tips {
+    background-color: #f3ffbd67;
+    width: 100%;
+    min-height: 30px;
+    margin: 0px;
+    margin-bottom: 0;
+    transition: all 0.5s;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    animation: tips 1.8s;
+}
+
+#tips, #copyright p {
+    padding-left: 17px;
+}
+
+input, button {
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    transition: all 0.5s;
+    background-color: #ffffff85;
+    backdrop-filter: blur(40px);
+    box-shadow: 3px 3px 10px #00000013;
+}
+
+label, button {
+    margin-left: 17px;
+}
+
+button:hover {
+    scale: 1.1;
+    cursor: pointer;
+}
+
+input:focus {
+    background-color: #fff;
 }
