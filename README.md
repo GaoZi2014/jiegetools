@@ -18,10 +18,8 @@
 </div>
 
 > ## Version 1.1
-[New] Added new timer app.
-<br>
-<br>
-[New] Added onclick to hide copyright div.
+[New] Fixed some bugs (Clock App)
+- Fixed and changed the method of toggle the color changer.
 <br/>
 <hr>
 
