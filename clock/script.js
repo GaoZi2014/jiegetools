@@ -73,7 +73,7 @@ function hideTips() {
 const colorChanger = document.getElementById("colorChanger");
 let isColorChangerVisible = false;
 
-document.addEventListener('keydown', function(event) {
+document.getElementById("container").addEventListener('keydown', function(event) {
   if (event.code === 'KeyS') {
     isColorChangerVisible = true;
     colorChanger.style.display = "block";
@@ -85,10 +85,10 @@ document.addEventListener('keydown', function(event) {
 
 let dblClickCount = 0;
 
-document.addEventListener('click', function(event) {
+document.getElementById("container").addEventListener('click', function(event) {
   dblClickCount++;
   if (dblClickCount % 2 === 1) {
-    colorChanger.style.display = "block";
+    colorChanger.style.display = "flex";
   } else {
     colorChanger.style.display = "none";
   }
