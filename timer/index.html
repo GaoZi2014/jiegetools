@@ -25,9 +25,17 @@
         <input type="submit" id="start-timer-btn" value="Start Timer">
         <div id="timer-display"></div>
     </div>
-    <div id="copyright">
-        Copyright 2024 Jiege Developer
+    <div class="flex">
+        <div id="copyright">
+            Copyright 2024 Jiege Developer
+        </div>
+        <div id="go-back-wrapper">
+            <center>
+                <button id="go-back-btn" onclick="location.reload()">Set a new timer</button>
+            </center>
+        </div>
     </div>
+    <audio id="ringtone" src="assets/ringtone/audio.mp3" loop></audio>
     <script src="script.js"></script>
 </body>
 </html>

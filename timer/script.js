@@ -82,8 +82,21 @@ function startTimer() {
       timerDisplay.textContent = `${hoursDisplay.toString().padStart(2, '0')}:${minutesDisplay.toString().padStart(2, '0')}:${secondsDisplay.toString().padStart(2, '0')}`;
 
       if (totalSeconds === 0) {
+        const ringtone = document.getElementById("ringtone");
+        const goback = document.getElementById("go-back-btn");
+        const copyright = document.getElementById("copyright");
+        const gobackdiv = document.getElementById("go-back-wrapper");
+
         clearInterval(intervalId);
         timerDisplay.textContent = endText;
+        ringtone.play();
+        goback.style.display = "block";
+        goback.style.opacity = "0";
+        copyright.style.height = "40px";
+        gobackdiv.style.height = "40px";
+        setTimeout(function () {
+            goback.style.opacity = "1";
+        }, 900);
       }
     }, 1000);
   }
