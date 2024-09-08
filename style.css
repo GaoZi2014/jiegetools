@@ -97,6 +97,10 @@ a {
     font-weight: 400;
 }
 
+p {
+    padding-left: 17px;
+}
+
 /* 404 code style w_w */
 
 @keyframes changecolor {
