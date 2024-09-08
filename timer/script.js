@@ -92,10 +92,10 @@ function startTimer() {
         ringtone.play();
         goback.style.display = "block";
         goback.style.opacity = "0";
-        copyright.style.height = "40px";
-        gobackdiv.style.height = "40px";
+        copyright.style.minHeight = "40px";
         setTimeout(function () {
             goback.style.opacity = "1";
+            gobackdiv.style.display = "block";
         }, 900);
       }
     }, 1000);
