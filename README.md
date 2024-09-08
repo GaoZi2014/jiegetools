@@ -17,8 +17,11 @@
   <img src="/screenshot/screenshot.png">
 </div>
 
-> ## Version 1.1
-[New] Fixed some bugs (Clock App)
+> ## Version 2.0
+[New] Added function in Timer App
+- Added Ringtone while the timer ends
+- Changed button's color
+[Fix] Fixed some bugs (Clock App)
 - Fixed and changed the method of toggle the color changer.
 <br/>
 <hr>
