@@ -21,10 +21,6 @@
 [New] Added function in Timer App
 - Added Ringtone while the timer ends
 - Changed button's color
-<br>
-> ## Version 1.1
-[Fix] Fixed some bugs (Clock App)
-- Fixed and changed the method of toggle the color changer.
 <br/>
 <hr>
 
