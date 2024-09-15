@@ -73,14 +73,14 @@ function hideTips() {
 const colorChanger = document.getElementById("colorChanger");
 let isColorChangerVisible = false;
 
-document.getElementById("container").addEventListener('keydown', function(event) {
-  if (event.code === 'KeyS') {
-    isColorChangerVisible = true;
-    colorChanger.style.display = "block";
-  } else if (event.code === 'KeyH') {
-    isColorChangerVisible = false;
-    colorChanger.style.display = "none";
-  }
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'KeyS') {
+      isColorChangerVisible = true;
+      colorChanger.style.display = "block";
+    } else if (event.code === 'KeyH') {
+      isColorChangerVisible = false;
+      colorChanger.style.display = "none";
+    }
 });
 
 let dblClickCount = 0;
