@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "Product Sans";
+    src: url("font/Regular.ttf");
+}
+
+body {
+    background-color: #fefae0;
+    font-family: 'Product Sans', sans-serif;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 20px;
+}
+
+a {
+    color: #0044ff;
+    text-decoration: none;
+}
+
+li {
+    font-size: 25px;
+    margin: 10px;
+    transition: all 0.5s ease;
+}
+
+li:hover {
+    rotate: 1deg;
+}
