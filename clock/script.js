@@ -51,14 +51,6 @@ function updateClock() {
     clockElement.style.transform = 'translate(-50%, -50%)';
 }
 
-let copyright = document.getElementById("copyright")
-
-document.addEventListener('keydown', function(event) {
-    if (event.code === 'KeyQ') {
-        copyright.style.display = "none";
-    }
-});
-
 copyright.addEventListener('click', function() {
     copyright.style.display = "none";
 });
@@ -69,39 +61,3 @@ function hideTips() {
         document.getElementById("tips").style.display = "none";
     }, 800)
 }
-
-const colorChanger = document.getElementById("colorChanger");
-let isColorChangerVisible = false;
-
-document.addEventListener('keydown', function(event) {
-    if (event.code === 'KeyS') {
-      isColorChangerVisible = true;
-      colorChanger.style.display = "block";
-    } else if (event.code === 'KeyH') {
-      isColorChangerVisible = false;
-      colorChanger.style.display = "none";
-    }
-});
-
-let dblClickCount = 0;
-
-document.getElementById("container").addEventListener('click', function(event) {
-  dblClickCount++;
-  if (dblClickCount % 2 === 1) {
-    colorChanger.style.display = "flex";
-  } else {
-    colorChanger.style.display = "none";
-  }
-});
-
-const colorInput = document.getElementById('colorInput');
-const applyButton = document.getElementById('applyColor');
-
-applyButton.addEventListener('click', () => {
-    const colorCode = colorInput.value.trim();
-    if (colorCode.match(/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/)) {
-        document.body.style.backgroundColor = "#" + colorCode;
-    } else {
-        alert('Invalid color code. Please enter a valid hex code (e.g. FFFFFF).');
-    }
-});
